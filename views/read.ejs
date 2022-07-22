@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging</title>
+</head>
+<body>
+    
+
+    <table class="table" style="border:black 1px solid; text-align:center; width:50vw; margin-left:auto; margin-right:auto; margin-top: 3%; border-radius:8px">
+        <tr>
+          <th style="font-size:25px">ID</th>
+          <th style="font-size:25px">Name</th>
+          <th style="font-size:25px">Message</th>
+          <th style="font-size:25px">Date</th>
+        </tr>
+
+        <% if(userData.length!=0){ var i=1; userData.forEach(function(data){
+        %>
+        <tr>
+          <td><%=data.id %></td>
+          <td><%=data.name %></td>
+          <td><%=data.text %></td>
+          <td><%=data.date.toLocaleDateString('en-US')%></td>
+
+        </tr>
+        <% i++; }) %> <% } else{ %>
+        <tr>
+          <td colspan="7">No Data Found</td>
+        </tr>
+        <% } %>
+      </table>
+
+</body>
+</html>
